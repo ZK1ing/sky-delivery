@@ -30,4 +30,7 @@ public interface DishMapper {
 
    @Delete("delete from dish_flavor where dish_id=#{dishId}")
     void deleteByIds(Long id);
+
+   @AutoFill(value = OperationType.UPDATE)
+    void update(Dish dish);
 }
