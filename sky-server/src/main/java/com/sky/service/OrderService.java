@@ -14,4 +14,8 @@ public interface OrderService {
     PageResult pageQueryUser(int page, int pageSize, Integer status);
 
     OrderVO detail(Long id);
+
+    void repetition(Long id);
+
+//    void userCancelById(Long id);
 }
