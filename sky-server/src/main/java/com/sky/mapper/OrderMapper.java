@@ -19,6 +19,6 @@ public interface OrderMapper {
 
     @Select("select count(id) from orders where status = #{status}")
     Integer countStatus(Integer status);
-    @Update("update orders set status = #{status} where id = #{id}")
+
     void update(Orders orders);
 }

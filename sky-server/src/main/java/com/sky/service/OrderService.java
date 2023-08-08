@@ -30,6 +30,10 @@ public interface OrderService {
 
     void cancel(OrdersConfirmDTO ordersConfirmDTO);
 
+    void delivery(Long id);
+
+    void complete(Long id);
+
 
 //    void userCancelById(Long id);
 }
