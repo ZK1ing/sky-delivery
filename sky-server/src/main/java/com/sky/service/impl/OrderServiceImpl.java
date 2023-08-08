@@ -445,6 +445,22 @@ public class OrderServiceImpl implements OrderService {
         orderMapper.update(orders);
     }
 
+    @Override
+    public void reminder(Long id) {
+        //查询订单是否存在
+        Orders ordersDB = orderMapper.getById(id);
+        if(ordersDB == null){
+            throw new OrderBusinessException(MessageConstant.ORDER_NOT_FOUND);
+        }
+
+        //基于WebSocket实现催单功能
+        Map map = new HashMap();
+        map.put("type", 2);//2表示催单提醒
+        map.put("orderId", id);
+        map.put("content", "订单号"+ ordersDB.getNumber() +"的订单已经催单，请尽快处理");
+        webSocketServer.sendToAllClient(JSON.toJSONString(map));
+    }
+
 
     /**
      * 支付成功，修改订单状态

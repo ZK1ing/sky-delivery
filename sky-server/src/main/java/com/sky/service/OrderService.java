@@ -39,4 +39,6 @@ public interface OrderService {
 
 
     void userCancelById(Long id) throws Exception;
+
+    void reminder(Long id);
 }
