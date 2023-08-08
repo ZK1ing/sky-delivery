@@ -1,8 +1,6 @@
 package com.sky.service;
 
-import com.sky.dto.OrdersConfirmDTO;
-import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.dto.OrdersSubmitDTO;
+import com.sky.dto.*;
 import com.sky.result.PageResult;
 import com.sky.vo.OrderStatisticsVO;
 import com.sky.vo.OrderSubmitVO;
@@ -26,14 +24,19 @@ public interface OrderService {
 
     void confirm(OrdersConfirmDTO ordersConfirmDTO);
 
-    void rejection(OrdersConfirmDTO ordersConfirmDTO);
+    /**
+     * 拒单
+     *
+     * @param ordersRejectionDTO
+     */
+    void rejection(OrdersRejectionDTO ordersRejectionDTO) throws Exception;
 
-    void cancel(OrdersConfirmDTO ordersConfirmDTO);
+    void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception;
 
     void delivery(Long id);
 
     void complete(Long id);
 
 
-//    void userCancelById(Long id);
+    void userCancelById(Long id) throws Exception;
 }
