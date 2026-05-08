@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --sidebar-bg: #14141f;
+  --sidebar-hover: #1e1e30;
+  --sidebar-active: #282840;
+  --sidebar-text: #8b8ba7;
+  --sidebar-text-active: #faf5ed;
+  --accent: #f0a500;
+  --accent-light: rgba(240, 165, 0, 0.12);
+  --accent-glow: rgba(240, 165, 0, 0.25);
+  --danger: #e74c3c;
+  --success: #27ae60;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --border: #e8e8ec;
+  --bg-page: #f5f3f0;
+  --bg-card: #ffffff;
+  --radius: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --font-display: 'DM Sans', 'Noto Sans SC', system-ui, sans-serif;
+  --font-body: 'Noto Sans SC', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+
+/* El-Plus Overrides */
+:root {
+  --el-color-primary: var(--accent);
+  --el-color-primary-light-3: rgba(240, 165, 0, 0.7);
+  --el-color-primary-light-5: rgba(240, 165, 0, 0.4);
+  --el-color-primary-light-7: rgba(240, 165, 0, 0.15);
+  --el-color-primary-light-9: rgba(240, 165, 0, 0.05);
+  --el-border-radius-base: 8px;
+  --el-font-family: var(--font-body);
+}
+
+.el-button--primary {
+  --el-button-bg-color: var(--accent);
+  --el-button-border-color: var(--accent);
+  --el-button-hover-bg-color: #f5b730;
+  --el-button-hover-border-color: #f5b730;
+  font-weight: 500;
+}
+
+.el-card {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.el-menu { border-right: none !important; }
+
+.el-table {
+  --el-table-header-bg-color: #fafaf9;
+  --el-table-tr-bg-color: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.el-pagination { margin-top: 20px; justify-content: center; }
+
+/* Transition */
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
